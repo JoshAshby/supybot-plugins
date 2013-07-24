@@ -28,24 +28,23 @@
 
 ###
 
-import supybot.utils as utils
+#import supybot.utils as utils
 from supybot.commands import *
-import supybot.plugins as plugins
-import supybot.ircutils as ircutils
+#import supybot.plugins as plugins
+#import supybot.ircutils as ircutils
 import supybot.callbacks as callbacks
 
-import simplejson
-import supybot.utils.web as web
-import urllib2
-from urllib import urlencode, quote
+#import simplejson
+#import supybot.utils.web as web
+#import urllib2
+#from urllib import urlencode, quote
 import httplib
-from BeautifulSoup import BeautifulStoneSoup as BSS
-from random import randint
+#from BeautifulSoup import BeautifulStoneSoup as BSS
+#from random import randint
 
 SNARFERS = ['bit.ly','goo.gl','is.gd','ow.ly','tinyurl.com','tr.im','youtu.be']
 
 class ShortUrlSnarfer(callbacks.Plugin):
-
     regexps = ['shortUrlSnarfer']
 
     def shortUrlSnarfer(self, irc, msg, match):
@@ -59,6 +58,7 @@ class ShortUrlSnarfer(callbacks.Plugin):
         if res.status == 301 or res.status == 302:
             resolved = res.getheader('location')
         irc.reply('expanded: ' + resolved, prefixNick=True)
+        #irc.reply('expanded: ' + resolved, prefixNick=True)
 
 Class = ShortUrlSnarfer
 
